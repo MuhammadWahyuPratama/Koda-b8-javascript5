@@ -23,26 +23,12 @@ const y = new String("Hello world");
 
 console.log(y.toString()); // "Hello world"
 
-//4. parseInt
-// Metode yang merubah type data lain menjadi type data berbentuk number.
-// example :
-const readline = require("node:readline")
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+//4.forEach
+// Tidak membutuhkan parameter, dan kegunaannya menghapus array yang ada di paling belakang (last element)
+array9 = [4, 3, 30, 20, "a"];
+array9.forEach(function (index) {
+    console.log(index)
 })
-function pilihMenu() {
-    rl.question("Mau Nomor Menu berapa : ", function (pilih) {
-        let i = parseInt(pilih) - 1
-        if (!menu[i]) {
-            console.log("\nMenu tidak tersedia!")
-            return
-        }
-    })
-}
-
-pilihMenu()
 
 //5.concat()
 //  Metode ini menggabungkan argumen-argumen string ke dalam string ini dan mengembalikan string baru.
@@ -142,12 +128,14 @@ myFirstPromise.then((successMessage) => {
     console.log(`Yay! ${successMessage}`);
 });
 
-//15.setTimeout()
-//antarmuka ini Window mengatur waktu(timer) yang akan mengeksekusi sebuah fungsi atau bagian kode tertentu setelah timer berakhir.
-//example
-setTimeout(() => {
-    console.log("jek")
-}, 1000)
+//15.push()
+// memberikan atau menambahkan isi dalam array
+// example : 
+let angka = [2, 3, 4, 5, 6];
+
+angka.push(7);
+
+console.log(angka);
 
 //16. then()
 // Metode pada objek Promise menerima hingga dua argumen: fungsi callback untuk kasus Promise yang berhasil dan yang gagal. Metode ini menyimpan fungsi callback tersebut di dalam objek Promise yang dipanggil, lalu segera mengembalikan objek Promise lain, sehingga Anda dapat merangkai panggilan ke metode Promise lainnya.
@@ -184,18 +172,17 @@ console.log(inventory.find(isCherries));
 //18.map ()
 // Objek tersebut menyimpan pasangan kunci-nilai dan mengingat urutan penyisipan asli dari kunci-kunci tersebut. Nilai apa pun (baik objek maupun nilai primitif) dapat digunakan sebagai kunci maupun nilai.
 // example :
+array3 = [20, 20, 20, 20, 30];
+array3.map((item) => {
+    console.log(item);
+});
 
-//19.math () 
-//Objek namespace berisi properti dan metode statis untuk konstanta dan fungsi matematika.
+//19.length 
+//properti atau fungsi untuk mengetahui jumlah total elemen di dalam sebuah array.
 // example : 
-function degToRad(degrees) {
-    return degrees * (Math.PI / 180);
-}
+let arr = [1, 2, 3, 4]
 
-function radToDeg(rad) {
-    return rad / (Math.PI / 180);
-}
-console.log(degToRad(2))
+console.log(arr.length)
 
 //20.close()
 //Metode ini menutup jendela saat ini, atau jendela tempat metode tersebut dipanggil.
@@ -214,3 +201,32 @@ function closeOpenedWindow() {
 
 // 5 built in fuction
 
+//1. parseInt
+// Mengubah Tipe data lain menjadi Int
+// example :
+console.log(parseInt("2"));
+//2. ParseFloat
+// example :
+console.log(parseFloat(2 / 9));
+//3. isNaN 
+//mengembalikan true / false
+// example :
+console.log(isNaN(NaN));
+//4.math
+// Objek Math berisi properti dan metode statis untuk konstanta dan fungsi matematika.
+// example :
+function cariMaksimum(a, b) {
+    return Math.max(a, b);
+}
+function cariMinimum(a, b) {
+    return Math.min(a, b);
+}
+console.log(cariMaksimum(10, 25)); // Output: 25
+console.log(cariMinimum(10, 25));  // Output: 10
+
+//5.setTimeOut
+//antarmuka ini Window mengatur waktu(timer) yang akan mengeksekusi sebuah fungsi atau bagian kode tertentu setelah timer berakhir.
+//example
+setTimeout(() => {
+    console.log("jek")
+}, 1000)
